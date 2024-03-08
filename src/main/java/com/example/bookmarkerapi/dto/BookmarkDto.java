@@ -1,6 +1,6 @@
 package com.example.bookmarkerapi.dto;
 
-import com.example.bookmarkerapi.entity.Bookmark;
+import com.example.bookmarkerapi.entity.BookmarkDTO;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +11,7 @@ import java.util.List;
 @Setter
 @Getter
 public class BookmarkDto {
-    private List<Bookmark> data;
+    private List<BookmarkDTO> data;
     private long totalElements;
     private int totalPages;
     private int currentPage;
@@ -22,7 +22,7 @@ public class BookmarkDto {
     private boolean hasNext;
     private boolean hasPreviousPage;
 
-    public BookmarkDto(Page<Bookmark> bookmarkPage) {
+    public BookmarkDto(Page<BookmarkDTO> bookmarkPage) {
         this.setData(bookmarkPage.getContent());
         this.setTotalElements(bookmarkPage.getTotalElements());
         this.setTotalPages(bookmarkPage.getTotalPages());
